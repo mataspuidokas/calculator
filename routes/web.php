@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/', LoginController::class);
-Route::inertia('register', 'Auth/Register')->name('auth.register');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::post('/logout', [LoginController::class, 'destroy'])->name('login.logout');
+
+Route::prefix('register')->group(function () {
+    Route::get('/', [RegisterController::class, 'index'])->name('register.index');
+    Route::post('/', [RegisterController::class, 'store'])->name('register.store');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::inertia('/dashboard/calculator', 'Dashboard/Calculator')->name('dashboard.calculator');
+});
