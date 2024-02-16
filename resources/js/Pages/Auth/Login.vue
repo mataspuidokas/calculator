@@ -1,0 +1,3 @@
+<template>
+    <h1>Login coming soon</h1>
+</template>
