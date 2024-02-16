@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/', LoginController::class);
+Route::inertia('register', 'Auth/Register')->name('auth.register');

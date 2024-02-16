@@ -1,7 +1,7 @@
 <template>
-    <Head title="Login" />
+    <Head title="Register" />
     <AppLayout>
-        <h1 class="text-red-500">Login coming soon</h1>
+        <h1 class="text-red-500">Register coming soon</h1>
     </AppLayout>
 </template>
 
