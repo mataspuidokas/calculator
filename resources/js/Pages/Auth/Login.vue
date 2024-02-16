@@ -1,3 +1,3 @@
 <template>
-    <h1>Login coming soon</h1>
+    <h1 class="text-red-500">Login coming soon</h1>
 </template>
