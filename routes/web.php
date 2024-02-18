@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CalculatorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +26,5 @@ Route::prefix('register')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::inertia('/dashboard/calculator', 'Dashboard/Calculator')->name('dashboard.calculator');
+    Route::resource('/dashboard/calculator', CalculatorController::class);
 });
